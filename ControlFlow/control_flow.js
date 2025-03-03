@@ -26,7 +26,7 @@ if (isLoggedIn) {
 
 console.log("User Message:", userMessage);
 
-let userType = "subscriber";
+let userType = userRole || "subscriber";
 let userCategory;
 
 switch (userType){
@@ -44,3 +44,7 @@ switch (userType){
 }
 
 console.log("User Category:", userCategory);
+
+let isAuthenticated = true;
+let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
+console.log("Authentication Status:", authenticationStatus);
