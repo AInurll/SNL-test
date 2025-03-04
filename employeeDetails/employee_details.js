@@ -1,8 +1,8 @@
 const employees = [
-  { id: 1, name: 'John Doe', age: 30, department: 'IT', salary: 50000 },
-  { id: 2, name: 'Alice Smith', age: 28, department: 'HR', salary: 45000 },
-  { id: 3, name: 'Bob Johnson', age: 35, department: 'Finance', salary: 60000 },
-  { id: 4, name: 'Mark Markov', age: 29, department: 'IT', salary: 55000},
+  { id: 1, name: 'John Doe', age: 30, department: 'IT', specialization: 'JavaScript', salary: 50000 },
+  { id: 2, name: 'Alice Smith', age: 28, department: 'HR', specialization: 'Python', salary: 45000 },
+  { id: 3, name: 'Bob Johnson', age: 35, department: 'Finance', specialization: 'Java', salary: 60000 },
+  { id: 4, name: 'Mark Markov', age: 29, department: 'IT', specialization: 'JavaScript', salary: 55000},
   //... Здесь можно добавить больше записей сотрудников
 ];
 
@@ -33,3 +33,9 @@ function findEmployeeById(employeeId) {
 
   }
 };
+
+function displayEmployeesSpecialization() {
+	const employeesSpecialization = employees.filter(employee => employee.specialization === 'JavaScript');
+  const employeesSpecializationDisplay = employeesSpecialization.map((employee) => `<p>${employee.name} - ${employee.department} - ${employee.specialization}</p>`).join('');
+  document.getElementById('employeesDetails').innerHTML = employeesSpecializationDisplay;
+}
